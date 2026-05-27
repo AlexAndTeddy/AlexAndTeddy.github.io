@@ -26,7 +26,7 @@
             color: #ffffff;
         }
         .divington {
-            border: 1px solid black;
+            border: 1px dashed black;
         }
     </style>
   </head>
@@ -89,7 +89,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="divington">
                     <h2>Total:</h2><br>
                     <h3 id="total">Your total is $0</h3><br>
@@ -117,7 +117,7 @@
           total += donuts[i].price*1.115; //1.115 for sales tax
         }
         total = total.toFixed(2);
-        document.getElementById("total").innerHTML = "Your total is $" + total;
+        document.getElementById("total").innerHTML = "Your total is $" + total + " (sales tax included)";
       }
       function updateCartList() {
         var listHTML = "";
