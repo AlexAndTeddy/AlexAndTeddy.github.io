@@ -25,6 +25,9 @@
             border-color: #ff69b4; 
             color: #ffffff;
         }
+        .divington {
+            border: 1px solid black;
+        }
     </style>
   </head>
   <body>
@@ -89,9 +92,12 @@
             <div class="col-md-6">
                 <div class="divington">
                     <h2>Total:</h2><br>
-                    <h3 id="total"></h3><br>
+                    <h3 id="total">Your total is $0</h3><br>
                     <h2>Items in Cart:</h2><br>
                     <ol id="cartList"></ol>
+                    <br>
+                    <button class="btn mt-auto mx-auto" onclick="checkout()">Checkout</button>
+                    <br>
                 </div>
             </div>
         </div>
@@ -115,9 +121,14 @@
       function updateCartList() {
         var listHTML = "";
         for (let x = 0; x < donuts.length; x++) {
-            listHTML += "<li>" + donuts[i].name + "</li>";
+            listHTML += "<li>" + donuts[x].name + "</li>";
         }
         document.getElementById("cartList").innerHTML = listHTML;
+      }
+      function checkout() {
+        donuts = [];
+        document.getElementById("total").innerHTML = "Your total is $0";
+        document.getElementById("cartList").innerHTML = "";
       }
     </script>
   </body>
