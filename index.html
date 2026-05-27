@@ -114,8 +114,9 @@
       function updateTotal() {
         var total = 0;
         for (let i = 0; i < donuts.length; i++) {
-          total += donuts[i].price;
+          total += donuts[i].price*1.115; //1.115 for sales tax
         }
+        total = total.toFixed(2);
         document.getElementById("total").innerHTML = "Your total is $" + total;
       }
       function updateCartList() {
