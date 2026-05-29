@@ -60,7 +60,7 @@
                     <img src="media/glazed.jpg" class="card-img-top" alt="glazed">
                     <div class="card-body">
                         <h5 class="card-title">Glazed Donut</h5>
-                        <p class="card-text">$1.50</p>
+                        <p class="card-text">$1.50</p> 
                         <button class="btn mt-auto" onclick="addToCart('glazed', 1.50)">Add To Cart</button>
                     </div>
                 </div>
@@ -115,7 +115,14 @@
           total += donuts[i].price*1.115; //1.115 for sales tax
         }
         total = total.toFixed(2);
-        document.getElementById("total").innerHTML = "Your total is $" + total + " (sales tax included)";
+        if (total < 50) {
+            document.getElementById("total").innerHTML = `Your total is $${total} (sales tax included)`;
+        }
+        else {
+            total = total*0.9;
+            total = total.toFixed(2);
+            document.getElementById("total").innerHTML = `Your total is $${total} (10% discount for sale over $100)`;
+        }
       }
       function updateCartList() {
         var listHTML = "";
